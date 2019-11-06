@@ -22,7 +22,6 @@
 
 ### association
 - has_many :messages
-- has_many :comments
 - has_many :groups, through: :groups_users
 - has_many :groups_users
 
@@ -45,14 +44,13 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|title|text|null: false|
+|text|text||
 |user_id|integer|null: false, foreign_hey: true|
-|image|blob|null: false|
+|image|blob||
+|group_id|references|null: false, foreign_key: true|
 
 ### association
  - belongs_to :user
- - has_many :comments
  - belongs_to :group
  
 
