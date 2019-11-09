@@ -14,8 +14,8 @@
   .form
     .new-message
       .input-box
-        %input.login-input-text{:name => "message[content]", :placeholder => "type a message", :type => "text", :id => "message_content"}/
-        %label.input-box__image{:for => "message_image"}
+        %input.login-input-text{name: "message[content]", placeholder: "type a message", type: "text", id: "message_content"}/
+        %label.input-box__image{for: "message_image"}
           = fa_icon 'image'
-          %input.input-box__image__file{:name => "message[image]", :type => "file", :id => "message_image"}/
-      %input.submit-btn{:name => "comit", :type => "submit", :value => "Send", :data-disable-with => "send"}/
+          %input.input-box__image__file{name: "message[image]", type: "file", id: "message_image"}/
+      %input.submit-btn{name: "comit", type: "submit", value: "Send", data:{disable:{with: "send"}}}/
