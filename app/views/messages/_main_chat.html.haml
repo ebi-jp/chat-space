@@ -1,0 +1,21 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group  早稲田大学
+      .main-header__let-box__member-list  member
+    .main-header__edit-btn
+      = button_tag 'Edit',  class:"main-header__edit-btn--button"
+  .message
+    .message-contents
+      .message__upper-info
+        .message__upper-info--talker shouya 
+        .message__upper-info--date = current_date
+      .message-text this is a first message
+  .form
+    .new-message
+      .input-box
+        %input.login-input-text{name: "message[content]", placeholder: "type a message", type: "text", id: "message_content"}/
+        %label.input-box__image{for: "message_image"}
+          = fa_icon 'image'
+          %input.input-box__image__file{name: "message[image]", type: "file", id: "message_image"}/
+      %input.submit-btn{name: "comit", type: "submit", value: "Send", data:{disable:{with: "send"}}}/
