@@ -2,7 +2,7 @@
 lock "~> 3.11.2"
 
 set :application, "chat-space"
-set :repo_url, "git@example.com:ebi-jp/chat-space.git"
+set :repo_url, "git@github.com:ebi-jp/chat-space.git"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1'
@@ -50,3 +50,9 @@ end
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
